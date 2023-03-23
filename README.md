@@ -27,24 +27,25 @@ TO-DO
 TO-DO
 
 • Deployed Application URL:
+
 • Repository URL: https://github.com/siddz415/project-2
 
 ## Credits
 
-TO-DO
+• Navy Atwal (https://github.com/NavyAtwal)
 
-MVC MVPs:
 • Sam Cott (https://github.com/samc995)
-• Navy (https://github.com/)
-• Sidd (https://github.com/)
+
+• Sidd Dravid (https://github.com/siddz415)
+
 • Xavier Teo (https://github.com/XvrTeo)
 
 ## Technology Used
 
 TO-DO
-•
 
 ## License
+
 MIT License
 Copyright (c) [2023] [MVC MVPs]
 Permission is hereby granted, free of charge, to any person obtaining a copy
