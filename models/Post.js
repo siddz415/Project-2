@@ -18,6 +18,10 @@ Post.init(
     content: {
       type: DataTypes.TEXT,
     },
+    image: {
+      type: DataTypes.BLOB('long'),
+    },
+
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
