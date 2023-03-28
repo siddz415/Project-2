@@ -6,11 +6,17 @@ TO-DO
 
 ## User Story
 
-TO-DO
+• As a traveler, I want to find a compatible travel partner with whom I can explore a new country together, based on our preferred dates, gender preferences, types of journey, and budget.
+• I want to be able to view the profiles of potential travel partners, communicate with them, and plan our trip together.
 
 ## Acceptance Criteria
 
-TO-DO
+• Users can sign up for the application using their email address.
+• Users can input their preferred travel dates, budget, gender preference, and countries they want to visit.
+• Users can view a list of potential travel partners who match their travel criteria.
+• Users can view the profiles of potential travel partners, including their profile picture, bio, travel experience, and ratings from other users.
+• Users can filter potential travel partners based on various criteria such as age, language, interests, and reviews.
+• The application is responsive, accessible from desktop and mobile devices.
 
 ## Usage
 
