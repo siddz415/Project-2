@@ -1,0 +1,30 @@
+{
+  "name": "tech-blog",
+  "version": "1.0.0",
+  "description": "This is a CMS-style blog that allows users to publish articles and posts, as well as comment on other users' posts. The application's structure follows the MVC paradigm and the technologies used are MySQL2, Express, Handlebars, Sequelize and dotenv.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XvrTeo/Tech-Blog.git"
+  },
+  "author": "Xavier Teo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/XvrTeo/Tech-Blog/issues"
+  },
+  "homepage": "https://github.com/XvrTeo/Tech-Blog#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "connect-session-sequelize": "^7.1.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.4",
+    "express-session": "^1.17.3",
+    "mysql2": "^3.2.0",
+    "sequelize": "^6.29.3"
+  }
+}

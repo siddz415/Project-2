@@ -1,8 +1,35 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
-class Post extends Model {}
+// create our Post model
+class Post extends Model {
 
+  static upvote(body, models) {
+
+    return models.Vote.create({
+      user_id: body.user_id,
+      post_id: body.post_id,
+    }).then(() => {
+      return Post.findOne({
+        where: {
+          id: body.post_id,
+        },
+        include: [
+            {
+              model: models.Comment,
+              attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+              include: {
+                model: models.User,
+                attributes: ['username']
+              }
+            }
+          ]
+      });
+    });
+  }
+}
+
+// fields and columns created for Post model
 Post.init(
   {
     id: {
@@ -15,29 +42,25 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    content: {
-      type: DataTypes.TEXT,
-    },
-    date_created: {
-      type: DataTypes.DATE,
+    post_content: {
+      type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
     },
 
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
-        key: 'id',
+        model: "user",
+        key: "id",
       },
     },
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'post',
+    modelName: "post",
   }
 );
 
