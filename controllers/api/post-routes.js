@@ -11,7 +11,7 @@ router.get("/", (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
+        attributes: ["id", "comment_text", "post_id", "user_id", 'trip_budget', 'ratings', "created_at"],
         include: {
           model: User,
           attributes: ["username"],
@@ -23,7 +23,7 @@ router.get("/", (req, res) => {
       },
     ],
   })
-  // returns a JSON object containing the post data
+    // returns a JSON object containing the post data
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
       console.log(err);
@@ -34,7 +34,7 @@ router.get("/", (req, res) => {
 // creates a route to handle GET requests
 router.get("/:id", (req, res) => {
   // finds single post by ID
-    Post.findOne({
+  Post.findOne({
     where: {
       id: req.params.id,
     },
@@ -42,6 +42,8 @@ router.get("/:id", (req, res) => {
       "id",
       "title",
       "created_at",
+      'trip_budget',
+      'ratings',
     ],
     include: [
       {
@@ -73,16 +75,18 @@ router.get("/:id", (req, res) => {
 
 // creates a route to handle POST requests for new posts
 router.post("/", withAuth, (req, res) => {
-    Post.create({
-      title: req.body.title,
-      post_content: req.body.post_content,
-      user_id: req.session.user_id,
-    })
-      .then((dbPostData) => res.json(dbPostData))
-      .catch((err) => {
-        console.log(err);
-        res.status(500).json(err);
-      });
+  Post.create({
+    title: req.body.title,
+    post_content: req.body.post_content,
+    user_id: req.session.user_id,
+    ratings: req.body.ratings,
+    trip_budget: req.body.trip_budget,
+  })
+    .then((dbPostData) => res.json(dbPostData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 // creates a route to handle PUT requests for updating existing posts

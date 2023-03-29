@@ -4,29 +4,6 @@ const sequelize = require("../config/connection");
 // create our Post model
 class Post extends Model {
 
-  static upvote(body, models) {
-
-    return models.Vote.create({
-      user_id: body.user_id,
-      post_id: body.post_id,
-    }).then(() => {
-      return Post.findOne({
-        where: {
-          id: body.post_id,
-        },
-        include: [
-            {
-              model: models.Comment,
-              attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-              include: {
-                model: models.User,
-                attributes: ['username']
-              }
-            }
-          ]
-      });
-    });
-  }
 }
 
 // fields and columns created for Post model
@@ -46,7 +23,18 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-
+    image: {
+      type: DataTypes.STRING,
+      allowNull: true,
+  },
+  trip_budget: {
+    type: DataTypes.DECIMAL(10, 2),
+    allowNull: true
+  },
+  ratings: {
+    type: DataTypes.INTEGER,
+    allowNull: true
+  },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
