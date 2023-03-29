@@ -28,13 +28,13 @@ Whether you're jet-setting around the world or hitting the open road, it's time 
 
 • When you revisit the site and sign in, you see navigation links for the homepage, dashboard, and an option to log out.
 
-• Clicking on an existing blog post displays the post title, content, post creator’s username, and date created, and you have the option to leave a comment.
+• Clicking on an existing blog post displays the post title, content, city, post creator’s username, and date created, and you have the option to leave a comment.
 
 • Submitting a comment while signed in saves the comment and updates the post to display the comment, the comment creator’s username, and the date created.
 
 • Clicking on the dashboard option in the navigation takes you to the dashboard, where you can view your existing blog posts and add new ones.
 
-• To add a new blog post, you must enter both a title and content for your post and save it.
+• To add a new blog post, you must enter values into the title, content and city fields for your post and save it.
 
 • Clicking on one of your existing posts in the dashboard lets you delete or update your post.
 
@@ -52,7 +52,7 @@ If you are a new user, click on the "sign up" link in the navigation header, and
 
 As a user of the Spiral Travel application, you have the ability to write your own blog posts about the destinations you have traveled to, sharing your experiences with fellow travel enthusiasts. To create a new post, click on the "dashboard" link in the navigation header, and you will be taken to your personal dashboard, where you can view your existing blog posts and add new ones.
 
-To add a new post, click on the "add new post" button and enter a title and content for your blog post. Once you have completed your post, click on the "create" button to save it, and it will be added to the list of existing blog posts on the homepage.
+To add a new post, enter values into the title, content and city fields for your blog post. Once you have completed your post, click on the "create" button to save it, and it will be added to the list of existing blog posts on the homepage.
 
 If you are interested in exploring a specific city, you can use the search bar in the navigation header to search for relevant blog posts and photos. Simply enter the name of the city you are interested in, and the site will present you with related content from other users.
 
