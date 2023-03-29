@@ -1,5 +1,9 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
+<<<<<<< HEAD
+=======
+const { Post, User, Comment, Picture } = require("../models");
+>>>>>>> feature/sam
 const withAuth = require("../utils/auth");
 const { Blog, User, Comment } = require("../models");
 
@@ -25,9 +29,17 @@ router.get("/", withAuth, (req, res) => {
         model: User,
         attributes: ["username"],
       },
+      {
+        model: Picture
+      }
     ],
   })
+<<<<<<< HEAD
     .then((dbBlogData) => {
+=======
+    .then((dbPostData) => {
+      console.log("dbPostData", dbPostData)
+>>>>>>> feature/sam
       // returned data is serialized and passed to the dashboard Handlebars template, along with a loggedIn flag set to true
       const blogPosts = dbBlogData.map((blog) => blog.get({ plain: true }));
       res.render("dashboard", { blogPosts, loggedIn: true });

@@ -10,9 +10,13 @@
         {{user.username}}
         on
         {{format_date created_at}}
-        |
-        {{comments.length}}
-        {{format_plural "comment" comments.length}}
+        <div class="meta">
+          {{#each pictures as |picture|}}
+          <img src="data:{{picture.mime}};base64,{{picture.picture}}" class="w-100" />
+          {{/each}}
+          {{comments.length}}
+          {{format_plural "comment" comments.length}}
+        </div>
       </div>
     </div>
   </a>

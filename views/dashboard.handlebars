@@ -17,10 +17,14 @@
       <label for="city-location">City</label>
       <input id="post-city-location" name="post-city-location" />
     </div>
+    <div class="form-group row">
+                            <label for="formFile" class="col-sm-6 col-form-label">&#x1F43E;Upload image</label>
+                            <div class="col-sm-10">
+                              <input class="form-control userimage" type="file" id="user_image"></div>
+                          </div>
     <button type="submit" class="btn">Create</button>
   </form>
 </section>
-
 {{#if blogPosts.length}}
 <section class="your-posts">
   <h2>Your Posts</h2>
@@ -34,7 +38,5 @@
   </div>
 </section>
 {{/if}}
-</div>
-
 
 <script src="/javascript/add-blog-post.js"></script>
