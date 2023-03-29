@@ -1,39 +1,45 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spiral Travel</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="/stylesheets/style.css">
-  
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spiral Travel</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 
 <body>
-    <div class="wrapper">
-        <header>
-            <h1>
-                <a href="/">Spiral Travel</a>
-            </h1>
-            <nav>
-                {{#if loggedIn}}
-                <a href="/">Home</a>
-                <a href="/dashboard">Profile</a>
-                <button id="logout" class="btn-no-style">Logout</button>
-                {{else}}
-                <a href="/login">Login</a>
-                {{/if}}
-            </nav>
-        </header>
-        <main>
-                {{{ body }}} </main>
-    </div>
-
-    {{#if loggedIn}}
-    <script src="/javascript/logout.js"></script>
-    {{/if}}
+  <div class="wrapper">
+    <header>
+      <h1>
+        <a href="/">Spiral Travel</a>
+      </h1>
+      <nav>
+        <form>
+          <input id="city-search" type="text" placeholder="City, State, Country" />
+          <button id="city-search-btn">Search</button>
+        </form>
+        {{#if loggedIn}}
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <button id="logout" class="btn-no-style">Logout</button>
+        {{else}}
+        <a href="/login">Login</a>
+        <a href="/sign-up">Sign-Up</a>
+        {{/if}}
+      </nav>
+    </header>
+    <main>
+      {{{body}}}
+    </main>
+    <footer>
+      <p>Spiral Travel <br /> &copy; 2023</p>
+      <p><a href="https://www.pexels.com/api/">Photos provided by Pexels</a></p>
+    </footer>
+  </div>
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
+  <script src="/javascript/search-city.js"></script>
 </body>
 
 </html>

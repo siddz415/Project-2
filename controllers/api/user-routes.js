@@ -1,10 +1,20 @@
 const router = require("express").Router();
-const { User, Post, Comment } = require("../../models");
+const { User, Blog, Comment } = require("../../models");
 
 router.get("/", (req, res) => {
-// use findAll method from the User model to retrieve all users from the database
+  // use findAll method from the User model to retrieve all users from the database
   User.findAll({
     attributes: { exclude: ["password"] },
+    include: [
+      {
+        model: Blog,
+        attributes: ["title"],
+      },
+      {
+        model: Comment,
+        attributes: ["comment_text"],
+      },
+    ],
   })
     .then((dbUserData) => res.json(dbUserData))
     .catch((err) => {
@@ -14,7 +24,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-// use findOne method from the User model to retrieve a single user from the database
+  // use findOne method from the User model to retrieve a single user from the database
   User.findOne({
     attributes: { exclude: ["password"] },
     where: {
@@ -22,22 +32,39 @@ router.get("/:id", (req, res) => {
     },
     include: [
       {
-        model: Post,
-        attributes: ["id", "title", "post_content", "created_at"],
+        model: Blog,
+        attributes: ["title"],
       },
       {
         model: Comment,
-        attributes: ["id", "comment_text", "created_at"],
-        include: {
-          model: Post,
-          attributes: ["title"],
-        },
+        attributes: ["comment_text"],
       },
     ],
   })
     .then((dbUserData) => {
       if (!dbUserData) {
-        res.status(404).json({ message: "No user found with this ID." });
+        res.status(404).json({ message: "No user found with this id" });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+// PUT request that updates user data in the User model
+router.put("/:id", (req, res) => {
+  User.update(req.body, {
+    individualHooks: true,
+    where: {
+      id: req.params.id,
+    },
+  })
+    .then((dbUserData) => {
+      if (!dbUserData[0]) {
+        res.status(404).json({ message: "No user found with this id" });
         return;
       }
       res.json(dbUserData);
@@ -49,10 +76,9 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-// use create method from the User model to create a new user in the database
+  // use create method from the User model to create a new user in the database
   User.create({
     username: req.body.username,
-    email: req.body.email,
     password: req.body.password,
   })
     .then((dbUserData) => {
@@ -60,6 +86,7 @@ router.post("/", (req, res) => {
         req.session.user_id = dbUserData.id;
         req.session.username = dbUserData.username;
         req.session.loggedIn = true;
+
         res.json(dbUserData);
       });
     })
@@ -69,29 +96,30 @@ router.post("/", (req, res) => {
     });
 });
 
-// POST request that accepts user email and password as input data
-router.post('/login', (req, res) => {
-// uses the findOne() method to find a user with the given email in the User model
+// POST request that accepts user name and password as input data
+router.post("/login", (req, res) => {
   User.findOne({
     where: {
-      email: req.body.email
-    }
-  }).then(dbUserData => {
+      username: req.body.username,
+    },
+  }).then((dbUserData) => {
     if (!dbUserData) {
-      res.status(400).json({ message: 'No user found with that email address.' });
+      res.status(400).json({ message: "No user account found!" });
       return;
     }
-// checks if the password provided in the request matches with the user's password using the checkPassword() method defined in the User model
+    // checks if the password provided in the request matches with the user's password using the checkPassword() method defined in the User model
     const validPassword = dbUserData.checkPassword(req.body.password);
     if (!validPassword) {
-      res.status(400).json({ message: 'That is the incorrect password.' });
+      res.status(400).json({ message: "No user account found!" });
       return;
     }
+
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
       req.session.loggedIn = true;
-      res.json({ user: dbUserData, message: 'You are now logged in.' });
+
+      res.json({ user: dbUserData, message: "You are now logged in!" });
     });
   });
 });
@@ -107,27 +135,6 @@ router.post("/logout", (req, res) => {
   }
 });
 
-// PUT request that updates user data in the User model
-router.put("/:id", (req, res) => {
-  User.update(req.body, {
-    individualHooks: true,
-    where: {
-      id: req.params.id,
-    },
-  })
-    .then((dbUserData) => {
-      if (!dbUserData) {
-        res.status(404).json({ message: "No user found with this ID." });
-        return;
-      }
-      res.json(dbUserData);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-
 // DELETE request that deletes a user from the User model with the given ID
 router.delete("/:id", (req, res) => {
   User.destroy({
@@ -137,7 +144,7 @@ router.delete("/:id", (req, res) => {
   })
     .then((dbUserData) => {
       if (!dbUserData) {
-        res.status(404).json({ message: "No user found with this ID." });
+        res.status(404).json({ message: "No user found with this id" });
         return;
       }
       res.json(dbUserData);

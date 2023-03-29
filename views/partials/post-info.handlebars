@@ -1,16 +1,19 @@
 <article class="post">
+  <a href="/blog/{{id}}">
     <div class="title">
-
-        <h3>{{title}}</h3>
-        <span>{{post_content}}</span>
-        <div>{{trip_budget}}</div>
-        <div>{{ratings}}/5</div>
+      {{title}}
     </div>
-    <div class="meta">
-
-        posted by {{user.username}} on
-        {{format_date createdAt}}
+    <div class="city-create-info">
+      <div id="city_location">{{city_location}}</div>
+      <div class="meta">
+        By
+        {{user.username}}
+        on
+        {{format_date created_at}}
         |
-        <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+        {{comments.length}}
+        {{format_plural "comment" comments.length}}
+      </div>
     </div>
+  </a>
 </article>
