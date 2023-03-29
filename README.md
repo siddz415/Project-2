@@ -2,31 +2,61 @@
 
 ## Description
 
-TO-DO
+Are you feeling restless and ready for an adventure but not sure where to begin? One of the most effective ways to uncover new and exciting travel destinations is to gather insights from other globetrotters.
+
+Using Spiral Travel, our easy-to-use traveler app, you can share your own travel stories and peruse those of others. Discover insider knowledge on the best beaches in Bali, the most delicious street food in Tokyo, or the most awe-inspiring hikes in Banff, all while sharing your own unforgettable travel experiences with fellow wanderlusters.
+
+Looking for information on a specific city? Just enter the name of your desired destination and access an array of blog posts and photos to fuel your curiosity before embarking on your next adventure.
+
+Whether you're jet-setting around the world or hitting the open road, it's time to take a break from the daily grind and embrace the freedom of travel with Spiral Travel!
 
 ## User Story
 
-• As a traveler, I want to find a compatible travel partner with whom I can explore a new country together, based on our preferred dates, gender preferences, types of journey, and budget.
+• AS A frequent traveler or someone who is planning for a trip,
 
-• I want to be able to view the profiles of potential travel partners, communicate with them, and plan our trip together.
+• I WANT to be able to access a travel blog which contains community-sourced information about different cities around the world,
+
+• SO THAT I can learn about potential travel destinations to help inform my vacation planning.
 
 ## Acceptance Criteria
 
-• Users can sign up for the application using their email address.
+• Upon navigating to the site, the homepage presents a list of existing blog posts and a navigation header with links.
 
-• Users can input their preferred travel dates, budget, gender preference, and countries they want to visit.
+• Clicking on any other links in the navigation prompts you to either log in or sign up.
 
-• Users can view a list of potential travel partners who match their travel criteria.
+• To sign up, you must create a username and password, and upon clicking the sign-up button, your user credentials are saved, and you are logged in.
 
-• Users can view the profiles of potential travel partners, including their profile picture, bio, travel experience, and ratings from other users.
+• When you revisit the site and sign in, you see navigation links for the homepage, dashboard, and an option to log out.
 
-• Users can filter potential travel partners based on various criteria such as age, language, interests, and reviews.
+• Clicking on an existing blog post displays the post title, content, post creator’s username, and date created, and you have the option to leave a comment.
 
-• The application is responsive, accessible from desktop and mobile devices.
+• Submitting a comment while signed in saves the comment and updates the post to display the comment, the comment creator’s username, and the date created.
+
+• Clicking on the dashboard option in the navigation takes you to the dashboard, where you can view your existing blog posts and add new ones.
+
+• To add a new blog post, you must enter both a title and content for your post and save it.
+
+• Clicking on one of your existing posts in the dashboard lets you delete or update your post.
+
+• Searching for a city using the search bar in the header presents blog posts and photos of the city.
+
+• Clicking on the logout option in the navigation signs you out of the site.
 
 ## Usage
 
-TO-DO
+As a user of the Spiral Travel application, you can explore exciting travel destinations, share your travel experiences, and engage with fellow travel enthusiasts.
+
+When you first arrive at the Spiral Travel homepage, you will be presented with a list of existing blog posts and a navigation header with links to other parts of the site. To fully engage with the site, you will need to log in or sign up for the blog.
+
+If you are a new user, click on the "sign up" link in the navigation header, and you will be prompted to create a username and password. Once you have created your credentials and clicked on the sign-up button, you will be automatically logged in to the site.
+
+As a user of the Spiral Travel application, you have the ability to write your own blog posts about the destinations you have traveled to, sharing your experiences with fellow travel enthusiasts. To create a new post, click on the "dashboard" link in the navigation header, and you will be taken to your personal dashboard, where you can view your existing blog posts and add new ones.
+
+To add a new post, click on the "add new post" button and enter a title and content for your blog post. Once you have completed your post, click on the "create" button to save it, and it will be added to the list of existing blog posts on the homepage.
+
+If you are interested in exploring a specific city, you can use the search bar in the navigation header to search for relevant blog posts and photos. Simply enter the name of the city you are interested in, and the site will present you with related content from other users.
+
+In summary, Spiral Travel offers users the opportunity to share their travel experiences and explore new destinations. By signing up and creating your own blog posts, you can contribute to the community of travel enthusiasts and gain valuable insights for your next adventure.
 
 ## Short Demo Animation
 
@@ -44,8 +74,6 @@ TO-DO
 
 ## Credits
 
-• Navy Atwal (https://github.com/NavyAtwal)
-
 • Sam Cott (https://github.com/samc995)
 
 • Sidd Dravid (https://github.com/siddz415)
@@ -54,7 +82,15 @@ TO-DO
 
 ## Technology Used
 
-TO-DO
+• HTML, CSS, and JavaScript
+
+• Node.js
+
+• Express.js, Express-Session, and Express-Handlebars
+
+• Sequelize
+
+• Bulma
 
 ## License
 
