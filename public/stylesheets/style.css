@@ -1,0 +1,509 @@
+/* Main */
+
+:root {
+  --first-color: #091d36;
+  --second-color: #0b4c84;
+  --third-color: #598ec2;
+  --fourth-color: #9bc1ee;
+  --fifth-color: #f0eff5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(../images/spiral3.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+  padding: 0 150px;
+  font-family: var(--primary-font);
+  color: var(--first-color);
+}
+
+main {
+  flex: 1;
+  padding: 2% 4%;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: #f1d35a;
+}
+
+/* Header */
+
+header {
+  border-bottom: 1px solid var(--fifth-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1%;
+}
+
+header h1 a {
+  font-family: Arial, sans-serif;
+  font-size: 60px;
+  font-weight: bold;
+  color: var(--fifth-color);
+}
+
+header nav a {
+  color: var(--fifth-color);
+  font-family: Helvetica, sans-serif;
+  font-weight: lighter;
+  font-size: 25px;
+  margin-right: 12px;
+}
+
+.btn-no-style {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--fifth-color);
+  font-family: Helvetica, sans-serif;
+  font-weight: lighter;
+  font-size: 25px;
+}
+
+.btn-no-style:hover {
+  background: none;
+  color: #f1d35a;
+}
+
+header nav {
+  text-align: center;
+}
+
+header nav form input {
+  padding: 5px;
+  border-radius: 10px;
+  display: inline-block;
+  border: 5px solid var(--fourth-color);
+  background-color: var(--fifth-color);
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+header nav form input:focus {
+  outline: none;
+  border: 1px solid color var(--first-color);
+}
+
+button {
+  background-color: var(--fourth-color);
+  border: 0;
+  padding: 5px;
+  color: var(--first-color);
+  font-weight: bold;
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: var(--third-color);
+}
+
+/* Homepage */
+
+.blog-post {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  border: #9bc1ee solid 5px;
+  background-color: rgba(240, 239, 245, 0.25);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.blog-post:nth-child(odd) {
+  border: var(--second-color) solid 5px;
+}
+
+.title {
+  font-family: Arial, sans-serif;
+  font-size: 35px;
+  color: var(--first-color);
+  font-weight: bold;
+}
+
+.city-create-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: lighter;
+  color: var(--first-color);
+}
+
+/* Dashboard */
+
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  font-family: Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+.dashboard h2 {
+  font-size: 35px;
+}
+
+.new-post-form {
+  border: var(--second-color) solid 5px;
+  padding: 30px;
+  background-color: rgba(240, 239, 245, 0.25);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  text-align: left;
+  width: 400px;
+}
+
+.new-post-form div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.new-post-form div label {
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.new-post-form div textarea {
+  height: 300px;
+}
+
+.new-post-form div input {
+  height: 30px;
+}
+
+.new-post-form button {
+  margin-top: 20px;
+  padding: 5px 10px;
+  width: 100px;
+}
+
+.your-posts {
+  width: 400px;
+}
+
+/* Single posts */
+
+.single-post {
+  font-family: Helvetica, sans-serif;
+  padding: 30px;
+  background-color: rgba(240, 239, 245, 0.25);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.single-title {
+  font-family: Arial, sans-serif;
+  font-size: 45px;
+  color: var(--first-color);
+  font-weight: lighter;
+}
+
+.content {
+  margin: 20px 0;
+  font-size: 20px;
+}
+
+/* Comments */
+
+.comment-form {
+  margin: 20px 0;
+}
+
+.comment-form textarea {
+  background-color: var(--fifth-color);
+  width: 300px;
+  height: 75px;
+}
+
+.comment-form button {
+  margin-top: 10px;
+  width: 200px;
+}
+
+.line {
+  border-top: var(--fifth-color) solid 1px;
+  margin-bottom: 40px;
+}
+
+.comment {
+  padding: 1%;
+  margin-bottom: 1%;
+  background-color: var(--first-color);
+  color: var(--fifth-color);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.comment:nth-child(odd) {
+  background-color: var(--second-color);
+}
+
+.text {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.comments-meta {
+  font-size: 90%;
+  opacity: 0.6;
+}
+
+/* Search */
+
+.display-search {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.photos {
+  flex: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.photos div {
+  margin: 10px 0;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* Edit posts */
+
+.edit-post-section h2 {
+  font-family: Helvetica, sans-serif;
+  font-size: 35px;
+}
+
+.dashboard-btn {
+  font-family: Arial, sans-serif;
+  color: var(--first-color);
+  font-size: 30px;
+}
+
+.edit-post-form {
+  margin-bottom: 5%;
+  font-family: Helvetica, sans-serif;
+  padding: 30px;
+  background-color: rgba(240, 239, 245, 0.25);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-family: Helvetica, sans-serif;
+}
+
+.edit-post-form div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.edit-post-form label {
+  font-size: 25px;
+}
+
+.edit-post-form input {
+  font-size: 20px;
+}
+
+.edit-meta {
+  margin-bottom: 15px;
+}
+
+.save-post-btn {
+  padding: 5px 20px;
+  margin-right: 10px;
+  background-color: var(--second-color);
+  color: var(--fifth-color);
+}
+
+.delete-post-btn {
+  padding: 5px 20px;
+  background-color: var(--second-color);
+  color: var(--fifth-color);
+}
+
+/* Footer */
+
+footer {
+  border-top: 1px solid var(--fifth-color);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 95%;
+}
+
+footer p,
+footer p a {
+  color: var(--fifth-color);
+  font-family: Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+/* Signup and Login */
+
+.signup-section>div {
+  font-family: var(--tertiary-font);
+  align-content: space-around;
+  display: block;
+  flex: auto;
+  animation-duration: 2s;
+  animation-name: materialize;
+  }
+
+  .login-section>div {
+  font-family: var(--tertiary-font);
+  align-content: space-around;
+  display: block;
+  flex: auto;
+  animation-duration: 2s;
+  animation-name: materialize;
+  }
+
+  @keyframes materialize {
+  from {
+  transform: scale(0);
+  }
+
+  to {
+  transform: scale(1);
+  }
+  }
+
+  .login-section,
+  .signup-section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  align-items: center;
+  }
+
+  .login,
+  .signup {
+  padding: 30px;
+  background-color: rgba(240, 239, 245, 0.25);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-family: Helvetica, sans-serif;
+  width: 300px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  }
+
+  .login-section a,
+  .signup-section a {
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--first-color);
+  font-family: Arial, sans-serif;
+  }
+
+  .login-section a:hover,
+  .signup-section a:hover {
+  color: #f1d35a;
+  }
+
+  .login-form div,
+  .signup-form div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 10px 0;
+  }
+
+  .login-form button,
+  .signup-form button {
+  margin: 20px 0;
+  }
+
+/* Media Queries */
+
+@media screen and (max-width: 1296px) {
+  .dashboard {
+    text-align: center;
+  }
+
+  .display-search {
+    flex-direction: column;
+  }
+
+  .display-list {
+    border-top: var(--fifth-color) solid 1px;
+    margin-top: 30px;
+    padding-top: 30px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  header {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 721px) {
+  .comment-form {
+    text-align: center;
+  }
+
+  .comment-form textarea {
+    width: 100%;
+  }
+
+  .edit-post-form label {
+    width: 100%;
+  }
+
+  .edit-post-form input {
+    width: 100%;
+  }
+
+  .delete-post-btn {
+    margin-top: 15px;
+    padding: 5px 15px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  header {
+    padding-bottom: 20px;
+  }
+
+  header h1 a {
+    font-size: 45px;
+  }
+
+  header nav {
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    padding-top: 20px;
+  }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer p {
+    text-align: center;
+  }
+}

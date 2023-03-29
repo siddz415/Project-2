@@ -1,0 +1,19 @@
+<article class="post">
+  <a href="/blog/{{id}}">
+    <div class="title">
+      {{title}}
+    </div>
+    <div class="city-create-info">
+      <div id="city_location">{{city_location}}</div>
+      <div class="meta">
+        By
+        {{user.username}}
+        on
+        {{format_date created_at}}
+        |
+        {{comments.length}}
+        {{format_plural "comment" comments.length}}
+      </div>
+    </div>
+  </a>
+</article>
