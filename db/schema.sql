@@ -1,5 +1,5 @@
 -- DROP DATABASE
-DROP DATABASE IF EXISTS tech_blog_db;
+DROP DATABASE IF EXISTS travel_blog_db;
 
 -- CREATE DATABASE
-CREATE DATABASE tech_blog_db;
+CREATE DATABASE travel_blog_db;
