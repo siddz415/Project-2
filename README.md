@@ -62,7 +62,7 @@ In summary, Spiral Travel offers users the opportunity to share their travel exp
 
 TO-DO
 
-![Deployed Website](./assets/images/animation.gif)
+![Deployed Website](./public/images/animation.gif)
 
 ## Links
 
@@ -82,15 +82,19 @@ TO-DO
 
 ## Technology Used
 
-• HTML, CSS, and JavaScript
+• CSS and JavaScript
 
 • Node.js
 
 • Express.js, Express-Session, and Express-Handlebars
 
+• MySQL
+
 • Sequelize
 
-• Bulma
+• Bcrypt
+
+• Pexels API
 
 ## License
 
