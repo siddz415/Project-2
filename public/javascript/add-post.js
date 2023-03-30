@@ -2,32 +2,31 @@ async function newFormHandler(event) {
     event.preventDefault();
 
     const title = document.querySelector('input[name="post-title"]').value;
-    const content = document.querySelector('textarea[name="content-body"]').value;
+    const post_content = document.querySelector('input[name="post-content"]').value;
     const photo = document.getElementById("user_image").files[0];
     const city_location = document.querySelector('input[name="post-city-location"]').value;
-
     let formData = new FormData();
-    const response = await fetch(`/api/blogs`, {
+    const response = await fetch(`/api/posts`, {
       method: "POST",
       body: JSON.stringify({
         title,
-        content,
+        post_content,
         city_location
       }),
       headers: {
         "Content-Type": "application/json",
       },
     });
-    const res = await response.json()
+    const res = await response.json().then( data => data);
     const post_id = res.id
     console.log("JS post_id", post_id)
 
     if (response.ok) {
-     console.log("ok");
+      // document.location.replace("/dashboard");
     } else {
       alert(response.statusText);
     }
-    // console.log(photo)
+    console.log(photo)
     formData.append("photo", photo);
     formData.append("id", post_id)
     console.log("form data", formData.get("photo"))
@@ -36,7 +35,7 @@ async function newFormHandler(event) {
       body: formData,
     });
     if (response2.ok) {
-      document.location.replace("/dashboard");
+      // document.location.replace("/dashboard");
     } else {
       alert(response.statusText);
     }
