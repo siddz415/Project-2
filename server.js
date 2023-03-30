@@ -3,6 +3,7 @@ const express = require("express");
 const path = require("path");
 const exphbs = require("express-handlebars");
 const session = require("express-session");
+const fileUpload = require('express-fileupload')
 
 // creates new Express application instance
 const app = express();
@@ -39,8 +40,13 @@ const hbs = exphbs.create({ helpers });
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 // to parse incoming JSON and URL-encoded data
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.json({limit: '50mb'}));
+app.use(express.urlencoded({ extended: true, limit: '50mb', parameterLimit: 1000000 }));
+app.use(fileUpload({
+    limits: { fileSize: 50 * 1024 * 1024 },
+    useTempFiles : true,
+    tempFileDir : './tmp/'
+  }));
 // serve static files from the public directory
 app.use(express.static(path.join(__dirname, "public")));
 // controller middleware for routing

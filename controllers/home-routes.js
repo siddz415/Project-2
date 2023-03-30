@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
-const { Blog, Comment, User } = require("../models");
+const { Blog, User, Comment, Picture } = require("../models");
 
 // sets up a route to handle GET requests to the root URL
 router.get("/", (req, res) => {
@@ -21,6 +21,7 @@ router.get("/", (req, res) => {
         model: User,
         attributes: ["username"],
       },
+      { model: Picture}
     ],
   })
     .then((dbBlogData) => {
@@ -60,6 +61,10 @@ router.get("/blog/:id", (req, res) => {
         model: User,
         attributes: ["username"],
       },
+      {
+        model: Picture
+
+      }
     ],
   })
     .then((dbBlogData) => {

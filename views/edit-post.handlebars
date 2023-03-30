@@ -27,20 +27,21 @@
         {{!-- <div class="buttons"> --}}
             <button type="submit" class="save-post-btn">Save post</button>
             <button type="button" class="delete-post-btn">Delete post</button>
-        {{!-- </div> --}}
+            {{!--
+        </div> --}}
     </form>
 </article>
 
 <div class="line"></div>
 
 <form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
+    <div>
+        <textarea name="comment-body"></textarea>
+    </div>
 
-  <div>
-    <button type="submit">Add Comment</button>
-  </div>
+    <div>
+        <button type="submit">Add Comment</button>
+    </div>
 </form>
 
 {{> comments post.comments}}
