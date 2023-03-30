@@ -1,6 +1,6 @@
 <div class="dashboard">
   <section class="create-blog">
-    <h2>Create New Blog Post</h2>
+    <h2>Create New Review</h2>
 
     <form class="new-post-form">
       <div>
@@ -23,12 +23,12 @@
           <input class="form-control userimage" type="file" id="user_image">
         </div>
       </div>
-      <button type="submit" class="btn">Create</button>
+      <button type="submit" class="btn">Submit</button>
     </form>
   </section>
   {{#if blogPosts.length}}
   <section class="your-posts">
-    <h2>Your Posts</h2>
+    <h2>Your Review</h2>
     <div>
       {{#each blogPosts as |post|}}
       <div class="blog-post">

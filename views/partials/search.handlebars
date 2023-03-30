@@ -1,0 +1,14 @@
+<div class="display-search">
+
+<div class="photos" id="photos"></div>
+
+<section class="display-list">
+    {{#each post as |post|}}
+    <div class="blog-post">
+        {{> post-info post}}
+    </div>
+    {{/each}}
+</section>
+</div>
+
+<script src="/javascript/searchCityPhoto.js"></script>
