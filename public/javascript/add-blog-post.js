@@ -4,13 +4,17 @@ async function newFormHandler(event) {
     const title = document.querySelector('input[name="post-title"]').value;
     const content = document.querySelector('textarea[name="content-body"]').value;
     const city_location = document.querySelector('input[name="post-city-location"]').value;
+    const trip_budget = document.querySelector('input[name="trip_budget"]').value;
+    const ratings = document.querySelector('input[name="ratings"]').value;
     
     const response = await fetch(`/api/blogs`, {
         method: 'POST',
         body: JSON.stringify({
             title,
             content,
-            city_location
+            city_location,
+            trip_budget,
+            ratings
         }),
         headers: {
             'Content-Type': 'application/json'

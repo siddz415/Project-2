@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ["id", "comment_text", "blog_id", "user_id", "created_at"],
+        attributes: ["id", "comment_text", "blog_id", "user_id","trip_budget", "ratings", "created_at"],
         include: {
           model: User,
           attributes: ["username"],
@@ -75,6 +75,8 @@ router.get('/location/:city_location', (req, res) => {
           'title',
           'content',
           'city_location',
+          'trip_budget',
+          'ratings',
           'created_at'
       ],
 
@@ -108,6 +110,8 @@ router.post("/", withAuth, (req, res) => {
     content: req.body.content,
     city_location: req.body.city_location,
     user_id: req.session.user_id,
+    ratings: req.body.ratings,
+    trip_budget: req.body.trip_budget,
   })
     .then((dbBlogData) => res.json(dbBlogData))
     .catch((err) => {
