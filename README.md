@@ -58,9 +58,17 @@ If you are interested in exploring a specific city, you can use the search bar i
 
 In summary, Spiral Travel offers users the opportunity to share their travel experiences and explore new destinations. By signing up and creating your own blog posts, you can contribute to the community of travel enthusiasts and gain valuable insights for your next adventure.
 
-## GIF Animation
+## Screenshots
 
-[Spiral Travel](./public/images/Project2Animation.mp4)
+![JPG](./public/images/screenshot1.jpg)
+
+![JPG](./public/images/screenshot2.jpg)
+
+![JPG](./public/images/screenshot3.jpg)
+
+## Demo
+
+[Spiral Travel](https://watch.screencastify.com/v/aDOJhupa6iPPl7Lhj8BK)
 
 ## Links
 
