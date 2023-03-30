@@ -1,10 +1,6 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
-<<<<<<< HEAD
-const { Blog, Comment, User } = require("../models");
-=======
-const { Post, User, Comment, Picture } = require("../models");
->>>>>>> feature/sam
+const { Blog, User, Comment, Picture } = require("../models");
 
 // sets up a route to handle GET requests to the root URL
 router.get("/", (req, res) => {
@@ -25,6 +21,7 @@ router.get("/", (req, res) => {
         model: User,
         attributes: ["username"],
       },
+      { model: Picture}
     ],
   })
     .then((dbBlogData) => {
@@ -70,14 +67,8 @@ router.get("/blog/:id", (req, res) => {
       }
     ],
   })
-<<<<<<< HEAD
     .then((dbBlogData) => {
       if (!dbBlogData) {
-=======
-    .then((dbPostData) => {
-      if (!dbPostData) {
-        console.log("dbPostData", dbPostData)
->>>>>>> feature/sam
         res.status(404).json({ message: "No post found with this id" });
         return;
       }

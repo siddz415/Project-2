@@ -2,45 +2,46 @@ async function newFormHandler(event) {
     event.preventDefault();
 
     const title = document.querySelector('input[name="post-title"]').value;
-    const post_content = document.querySelector('input[name="post-content"]').value;
+    const content = document.querySelector('textarea[name="content"]').value;
     const photo = document.getElementById("user_image").files[0];
     const city_location = document.querySelector('input[name="post-city-location"]').value;
     let formData = new FormData();
-    const response = await fetch(`/api/posts`, {
-      method: "POST",
-      body: JSON.stringify({
-        title,
-        post_content,
-        city_location
-      }),
-      headers: {
-        "Content-Type": "application/json",
-      },
+    const response = await fetch(`/api/blogs`, {
+        method: "POST",
+        body: JSON.stringify({
+            title,
+            content,
+            city_location
+        }),
+        headers: {
+            "Content-Type": "application/json",
+        },
     });
-    const res = await response.json().then( data => data);
+    const res = await response.json();
+    console.log(res);
     const post_id = res.id
     console.log("JS post_id", post_id)
 
     if (response.ok) {
-      // document.location.replace("/dashboard");
+        // document.location.replace("/dashboard");
     } else {
-      alert(response.statusText);
+        alert(response.statusText);
     }
     console.log(photo)
     formData.append("photo", photo);
     formData.append("id", post_id)
     console.log("form data", formData.get("photo"))
     const response2 = await fetch(`/api/pic`, {
-      method: 'POST',
-      body: formData,
+        method: 'POST',
+        body: formData,
     });
     if (response2.ok) {
-      // document.location.replace("/dashboard");
+        // document.location.replace("/dashboard");
     } else {
-      alert(response.statusText);
+        alert(response.statusText);
     }
-  }
+}
 
-  document
+document
     .querySelector(".new-post-form")
     .addEventListener("submit", newFormHandler);
