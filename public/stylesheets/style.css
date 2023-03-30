@@ -12,6 +12,12 @@
   box-sizing: border-box;
 }
 
+img {
+  height: 300px;
+  width: 330px;
+  object-fit: contain;
+}
+
 body {
   background-image: url(../images/spiral3.jpg);
   background-position: center;
@@ -362,39 +368,39 @@ footer p a {
   flex: auto;
   animation-duration: 2s;
   animation-name: materialize;
-  }
+}
 
-  .login-section>div {
+.login-section>div {
   font-family: var(--tertiary-font);
   align-content: space-around;
   display: block;
   flex: auto;
   animation-duration: 2s;
   animation-name: materialize;
-  }
+}
 
-  @keyframes materialize {
+@keyframes materialize {
   from {
-  transform: scale(0);
+    transform: scale(0);
   }
 
   to {
-  transform: scale(1);
+    transform: scale(1);
   }
-  }
+}
 
-  .login-section,
-  .signup-section {
+.login-section,
+.signup-section {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   margin-top: 50px;
   margin-bottom: 50px;
   align-items: center;
-  }
+}
 
-  .login,
-  .signup {
+.login,
+.signup {
   padding: 30px;
   background-color: rgba(240, 239, 245, 0.25);
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -402,35 +408,35 @@ footer p a {
   width: 300px;
   margin-top: 25px;
   margin-bottom: 25px;
-  }
+}
 
-  .login-section a,
-  .signup-section a {
+.login-section a,
+.signup-section a {
   text-decoration: none;
   font-size: 30px;
   font-weight: bold;
   color: var(--first-color);
   font-family: Arial, sans-serif;
-  }
+}
 
-  .login-section a:hover,
-  .signup-section a:hover {
+.login-section a:hover,
+.signup-section a:hover {
   color: #f1d35a;
-  }
+}
 
-  .login-form div,
-  .signup-form div {
+.login-form div,
+.signup-form div {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-evenly;
   margin: 10px 0;
-  }
+}
 
-  .login-form button,
-  .signup-form button {
+.login-form button,
+.signup-form button {
   margin: 20px 0;
-  }
+}
 
 /* Media Queries */
 
