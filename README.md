@@ -68,7 +68,7 @@ In summary, Spiral Travel offers users the opportunity to share their travel exp
 
 ## Demo
 
-[Spiral Travel](TO-DO)
+[Spiral Travel](https://watch.screencastify.com/v/3sCFdJQA8HgEXdE5Fs3K)
 
 ## Links
 
