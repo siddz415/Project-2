@@ -72,7 +72,7 @@ In summary, Spiral Travel offers users the opportunity to share their travel exp
 
 ## Links
 
-• Deployed Application URL: ***TO-DO***
+• Deployed Application URL: https://spiraltravel.herokuapp.com/
 
 • Repository URL: https://github.com/siddz415/project-2
 
@@ -99,6 +99,8 @@ In summary, Spiral Travel offers users the opportunity to share their travel exp
 • Bcrypt
 
 • Pexels API
+
+• Heroku
 
 ## License
 
