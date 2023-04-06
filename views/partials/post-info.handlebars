@@ -14,6 +14,8 @@
           {{#each pictures as |picture|}}
           <img src="data:{{picture.mime}};base64,{{picture.picture}}" class="w-100" />
           {{/each}}
+          {{trip_budget}}
+          {{ratings}}
           {{comments.length}}
           {{format_plural "comment" comments.length}}
         </div>

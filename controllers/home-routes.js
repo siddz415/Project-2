@@ -75,6 +75,7 @@ router.get("/blog/:id", (req, res) => {
 
       //   serialize data and rendered to the single-post template along with the loggedIn variable.
       const post = dbBlogData.get({ plain: true });
+      console.log('post', post);
 
       res.render("single-blog", {
         post,

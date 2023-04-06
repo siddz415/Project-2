@@ -113,7 +113,9 @@ router.post("/", withAuth, (req, res) => {
     ratings: req.body.ratings,
     trip_budget: req.body.trip_budget,
   })
-    .then((dbBlogData) => res.json(dbBlogData))
+    .then((dbBlogData) => {
+      console.log('blog', dbBlogData);
+      res.json(dbBlogData)})
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);

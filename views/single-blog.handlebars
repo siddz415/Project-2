@@ -5,6 +5,9 @@
   <div class="content">
     {{post.content}}
   </div>
+  <div class="meta">
+          <img src="data:{{picture.mime}};base64,{{picture.picture}}" class="w-100" />
+          </div>
   <div class="blog-meta">
     By {{post.user.username}} on
     {{format_date post.created_at}}

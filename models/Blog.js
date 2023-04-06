@@ -21,17 +21,6 @@ Blog.init(
       type: DataTypes.TEXT("long"),
       allowNull: false,
     },
-    city_location: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [2],
-      },
-    },
-    image: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
     trip_budget: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: true
@@ -40,6 +29,14 @@ Blog.init(
       type: DataTypes.INTEGER,
       allowNull: true
     },
+    city_location: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [2],
+      },
+    },
+    
     user_id: {
       type: DataTypes.INTEGER,
       references: {
