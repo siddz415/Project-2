@@ -6,8 +6,10 @@
     {{post.content}}
   </div>
   <div class="meta">
-          <img src="data:{{picture.mime}};base64,{{picture.picture}}" class="w-100" />
+          {{#each post.pictures}}
+        <img src="data:{{mime}};base64,{{picture}}" class="w-100" />
           </div>
+          {{/each}}
   <div class="blog-meta">
     By {{post.user.username}} on
     {{format_date post.created_at}}

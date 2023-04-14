@@ -21,13 +21,12 @@ router.get("/", (req, res) => {
         model: User,
         attributes: ["username"],
       },
-      { model: Picture}
+      { model: Picture }
     ],
   })
     .then((dbBlogData) => {
       // returned data is then serialized and passed to the homepage Handlebars template to render the posts on the page
       const blogPosts = dbBlogData.map((blog) => blog.get({ plain: true }));
-
       res.render("homepage", {
         blogPosts,
         loggedIn: req.session.loggedIn,

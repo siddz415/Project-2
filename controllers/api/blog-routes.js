@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ["id", "comment_text", "blog_id", "user_id","trip_budget", "ratings", "created_at"],
+        attributes: ["id", "comment_text", "blog_id", "user_id", "trip_budget", "ratings", "created_at"],
         include: {
           model: User,
           attributes: ["username"],
@@ -21,7 +21,7 @@ router.get("/", (req, res) => {
       },
     ],
   })
-  // returns a JSON object containing the post data
+    // returns a JSON object containing the post data
     .then((dbBlogData) => res.json(dbBlogData))
     .catch((err) => {
       console.log(err);
@@ -67,40 +67,40 @@ router.get("/:id", (req, res) => {
 // get the city for search
 router.get('/location/:city_location', (req, res) => {
   Blog.findAll({
-      where: {
-          city_location: req.params.city_location
+    where: {
+      city_location: req.params.city_location
+    },
+    attributes: [
+      'id',
+      'title',
+      'content',
+      'city_location',
+      'trip_budget',
+      'ratings',
+      'created_at'
+    ],
+
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'blog_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
       },
-      attributes: [
-          'id',
-          'title',
-          'content',
-          'city_location',
-          'trip_budget',
-          'ratings',
-          'created_at'
-      ],
 
-      include: [
-          {
-              model: Comment,
-              attributes: ['id', 'comment_text', 'blog_id', 'user_id', 'created_at'],
-              include: {
-                  model: User,
-                  attributes: ['username']
-              }
-          },
-
-          {
-              model: User,
-              attributes: ['username']
-          }
-      ]
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
   })
-  .then((dbBlogData) => res.json(dbBlogData))
-  .catch((err) => {
-    console.log(err);
-    res.status(500).json(err);
-  });
+    .then((dbBlogData) => res.json(dbBlogData))
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 // creates a route to handle POST requests for new posts
@@ -115,7 +115,8 @@ router.post("/", withAuth, (req, res) => {
   })
     .then((dbBlogData) => {
       console.log('blog', dbBlogData);
-      res.json(dbBlogData)})
+      res.json(dbBlogData)
+    })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
