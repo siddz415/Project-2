@@ -5,7 +5,7 @@ const { Blog, User, Comment, Picture } = require("../models");
 // sets up a route to handle GET requests to the root URL
 router.get("/", (req, res) => {
   Blog.findAll({
-    attributes: ["id", "title", "content", "city_location", "created_at"],
+    attributes: ["id", "title", "content", "city_location", "created_at", "ratings", "trip_budget"],
 
     include: [
       {
