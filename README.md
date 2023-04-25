@@ -34,7 +34,7 @@ Whether you're jet-setting around the world or hitting the open road, it's time 
 
 • Clicking on the dashboard option in the navigation takes you to the dashboard, where you can view your existing blog posts and add new ones.
 
-• To add a new blog post, you must enter values into the title, content and city fields for your post and save it.
+• To add a new blog post, you must enter values into the title, content, and city fields for your post, as well as upload an image file.
 
 • Clicking on one of your existing posts in the dashboard lets you delete or update your post.
 
@@ -52,25 +52,29 @@ If you are a new user, click on the "sign up" link in the navigation header, and
 
 As a user of the Spiral Travel application, you have the ability to write your own blog posts about the destinations you have traveled to, sharing your experiences with fellow travel enthusiasts. To create a new post, click on the "dashboard" link in the navigation header, and you will be taken to your personal dashboard, where you can view your existing blog posts and add new ones.
 
-To add a new post, enter values into the title, content and city fields for your blog post. Once you have completed your post, click on the "create" button to save it, and it will be added to the list of existing blog posts on the homepage.
+To add a new post, enter values into the title, content, and city fields for your post, as well as upload an image file. Once you have completed your post, click on the "create" button to save it, and it will be added to the list of existing blog posts on the homepage.
 
 If you are interested in exploring a specific city, you can use the search bar in the navigation header to search for relevant blog posts and photos. Simply enter the name of the city you are interested in, and the site will present you with related content from other users.
 
 In summary, Spiral Travel offers users the opportunity to share their travel experiences and explore new destinations. By signing up and creating your own blog posts, you can contribute to the community of travel enthusiasts and gain valuable insights for your next adventure.
 
-## Short Demo Animation
+## Screenshots
 
-TO-DO
+![JPG](./public/images/screenshot1.jpg)
 
-![Deployed Website](./public/images/animation.gif)
+![JPG](./public/images/screenshot2.jpg)
+
+![JPG](./public/images/screenshot3.jpg)
+
+## Demo
+
+[Spiral Travel](https://drive.google.com/file/d/1nky-7eQcC-Z6Eg9BPn90dkGalzIh9TtP/view)
 
 ## Links
 
-TO-DO
+• Deployed Application URL: https://spiraltravel.herokuapp.com/
 
-• Deployed Application URL:
-
-• Repository URL: https://github.com/siddz415/project-2
+• Repository URL: https://github.com/siddz415/Spiral-travel
 
 ## Credits
 
@@ -86,7 +90,7 @@ TO-DO
 
 • Node.js
 
-• Express.js, Express-Session, and Express-Handlebars
+• Express.js, Express-Session, Express-Handlebars, and Express-fileupload
 
 • MySQL
 
@@ -95,6 +99,8 @@ TO-DO
 • Bcrypt
 
 • Pexels API
+
+• Heroku
 
 ## License
 
