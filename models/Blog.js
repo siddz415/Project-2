@@ -2,7 +2,7 @@ const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
 // create our Blog model
-class Blog extends Model {}
+class Blog extends Model { }
 
 // fields and columns created for Blog model
 Blog.init(
@@ -21,6 +21,14 @@ Blog.init(
       type: DataTypes.TEXT("long"),
       allowNull: false,
     },
+    trip_budget: {
+      type: DataTypes.DECIMAL(10, 2),
+      allowNull: true
+    },
+    ratings: {
+      type: DataTypes.INTEGER,
+      allowNull: true
+    },
     city_location: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -28,6 +36,7 @@ Blog.init(
         len: [2],
       },
     },
+    
     user_id: {
       type: DataTypes.INTEGER,
       references: {

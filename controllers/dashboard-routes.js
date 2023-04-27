@@ -9,7 +9,7 @@ router.get("/", withAuth, (req, res) => {
       user_id: req.session.user_id,
     },
 
-    attributes: ["id", "title", "content", "city_location", "created_at"],
+    attributes: ["id", "title", "content", "city_location", "created_at", "trip_budget", "ratings"],
 
     include: [
       {
@@ -44,7 +44,7 @@ router.get("/", withAuth, (req, res) => {
 // sets up a GET route for the path "/edit/:id" of the app's server
 router.get("/edit/:id", withAuth, (req, res) => {
   Blog.findByPk(req.params.id, {
-    attributes: ["id", "title", "content", "city_location", "created_at"],
+    attributes: ["id", "title", "content", "city_location", "created_at", "trip_budget", "ratings"],
 
     include: [
       {

@@ -14,6 +14,32 @@
           {{#each pictures as |picture|}}
           <img src="data:{{picture.mime}};base64,{{picture.picture}}" class="w-100" />
           {{/each}}
+          {{trip_budget}}
+          {{#if (eq ratings "5")}}
+
+          <img class="rate-stars" src="/images/5star.png" alt="5 stars rating">
+
+          {{/if}}
+          {{#if (eq ratings "4")}}
+
+          <img class="rate-stars" src="/images/4star.png" alt="4 stars rating">
+
+          {{/if}}
+          {{#if (eq ratings "3")}}
+
+          <img class="rate-stars" src="/images/3star.png" alt="3 stars rating">
+
+          {{/if}}
+          {{#if (eq ratings "2")}}
+
+          <img class="rate-stars" src="/images/2star.png" alt="2 stars rating">
+
+          {{/if}}
+          {{#if (eq ratings "1")}}
+
+          <img class="rate-stars" src="/images/1star.png" alt="1 star rating">
+
+          {{/if}}
           {{comments.length}}
           {{format_plural "comment" comments.length}}
         </div>

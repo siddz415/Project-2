@@ -5,7 +5,7 @@ const { Blog, User, Comment, Picture } = require("../models");
 // sets up a route to handle GET requests to the root URL
 router.get("/", (req, res) => {
   Blog.findAll({
-    attributes: ["id", "title", "content", "city_location", "created_at"],
+    attributes: ["id", "title", "content", "city_location", "created_at", "ratings", "trip_budget"],
 
     include: [
       {
@@ -21,13 +21,12 @@ router.get("/", (req, res) => {
         model: User,
         attributes: ["username"],
       },
-      { model: Picture}
+      { model: Picture }
     ],
   })
     .then((dbBlogData) => {
       // returned data is then serialized and passed to the homepage Handlebars template to render the posts on the page
       const blogPosts = dbBlogData.map((blog) => blog.get({ plain: true }));
-
       res.render("homepage", {
         blogPosts,
         loggedIn: req.session.loggedIn,
@@ -75,6 +74,7 @@ router.get("/blog/:id", (req, res) => {
 
       //   serialize data and rendered to the single-post template along with the loggedIn variable.
       const post = dbBlogData.get({ plain: true });
+      console.log('post', post);
 
       res.render("single-blog", {
         post,
